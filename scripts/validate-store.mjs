@@ -101,7 +101,7 @@ else
       !Array.isArray(store.platforms) ||
       !store.platforms.length ||
       !store.platforms.every((v) =>
-        ["windows-x64", "linux-x64", "macos-arm64", "macos-x64"].includes(v),
+        ["windows-x64", "linux-x64", "macos-arm64", "macos-x64", "web-wasm32"].includes(v),
       )
     )
       fail(`${app}: invalid platforms`);
