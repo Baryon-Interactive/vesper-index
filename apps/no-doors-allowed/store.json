@@ -14,44 +14,44 @@
   ],
   "screenshots": [
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-1-jewelry.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-1-jewelry.jpg",
       "blake3": "9933a91acf4d32e6ccd4c3f95f421d87f1914e4c8eb1e19756723531277ecbb5",
       "width": 1280,
       "height": 720
     },
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-2-breach.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-2-breach.jpg",
       "blake3": "9256536fc795ff15b2e8a98ab8c6d1658f1817df4ac9cf94729fb89d75247dea",
       "width": 1280,
       "height": 720
     },
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-3-cut.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-3-cut.jpg",
       "blake3": "6ca805733ba2ea782b3d51771c11b2b2a51e02a19b875b645f26f1a96c497905",
       "width": 1280,
       "height": 720
     },
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-4-ram.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-4-ram.jpg",
       "blake3": "f1ec26949eb8c569761dff99a6595be0affb3de6478759a0d15fe8b4a7b36a67",
       "width": 1280,
       "height": 720
     },
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-5-chase.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-5-chase.jpg",
       "blake3": "0918bd73545de34e14a521ca6cb9a2a9ad19a2b31b27aa585f193bcb40a27d04",
       "width": 1280,
       "height": 720
     },
     {
-      "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/shot-6-plan.jpg",
+      "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/shot-6-plan.jpg",
       "blake3": "cebbf2ad22ff21587eff528d696ebc564dfc84e38a08e8df323e22bbe836b39f",
       "width": 1280,
       "height": 720
     }
   ],
   "cover": {
-    "url": "https://packs.vesperplay.xyz/media/no-doors-allowed/cover.jpg",
+    "url": "https://raw.githubusercontent.com/Baryon-Interactive/no-doors-allowed-releases/main/media/cover.jpg",
     "blake3": "7195389076cd1ecf51300b68bbc35347469a2c98ae9ce068e83ca1f2d28ec30b",
     "width": 1600,
     "height": 900
