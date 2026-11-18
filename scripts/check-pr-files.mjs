@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { pathToFileURL } from "node:url";
+import { isStoreFileName } from "./store-rules.mjs";
 
 // Inspect the complete PR diff, including both sides of a rename.
 export function checkPrFiles(files, registries = []) {
@@ -12,9 +13,8 @@ export function checkPrFiles(files, registries = []) {
       ? [file]
       : [file?.filename, ...(file?.previous_filename ? [file.previous_filename] : [])];
     for (const name of paths) {
-      const match = typeof name === "string"
-        && /^apps\/([^/]+)\/(store\.json|description\.md|targets\.json)$/.exec(name);
-      if (!match || match[1] === "." || match[1] === ".." || /[\\\x00-\x1f\x7f]/.test(name)) {
+      const match = typeof name === "string" && /^apps\/([^/]+)\/([^/]+)$/.exec(name);
+      if (!match || !(match[2] === "targets.json" || isStoreFileName(match[2])) || match[1] === "." || match[1] === ".." || /[\\\x00-\x1f\x7f]/.test(name)) {
         return { allowed: false, reason: `Maintainer merge required for path: ${JSON.stringify(name)}` };
       }
       apps.add(match[1]);

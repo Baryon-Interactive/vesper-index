@@ -79,3 +79,20 @@ test("versioned roots are served next to root.json with a real 404 page", () => 
     assert.equal(fs.existsSync(path.join(dist, "404.html")), true);
   } finally { fs.rmSync(temp, {recursive: true, force: true}); }
 });
+
+test("signed store documents are served and other files are not", () => {
+  const temp = fs.mkdtempSync(path.join(scratch, "docs-"));
+  try {
+    fs.cpSync(fixture, temp, {recursive: true});
+    const app = path.join(temp, "apps/example-game");
+    fs.writeFileSync(path.join(app, "changelog.md"), "## 1.1\n");
+    fs.writeFileSync(path.join(app, "description.ja.md"), "Japanese\n");
+    fs.writeFileSync(path.join(app, "notes.txt"), "private\n");
+    const result = spawnSync(process.execPath, [build, "--index", temp], {encoding: "utf8"});
+    assert.equal(result.status, 0, result.stderr);
+    const served = path.join(temp, "dist/apps/example-game");
+    assert.equal(fs.readFileSync(path.join(served, "changelog.md"), "utf8"), "## 1.1\n");
+    assert.equal(fs.readFileSync(path.join(served, "description.ja.md"), "utf8"), "Japanese\n");
+    assert.equal(fs.existsSync(path.join(served, "notes.txt")), false);
+  } finally { fs.rmSync(temp, {recursive: true, force: true}); }
+});

@@ -1,0 +1,134 @@
+{
+  "title": {
+    "en": "Example Game",
+    "es": "Juego de ejemplo"
+  },
+  "summary": {
+    "en": "A small game used to demonstrate the Vesper index."
+  },
+  "tags": [
+    "demo",
+    "action"
+  ],
+  "screenshots": [
+    {
+      "url": "https://example.com/example-game/screenshot-1.png",
+      "blake3": "0000000000000000000000000000000000000000000000000000000000000000",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "cover": {
+    "url": "https://example.com/example-game/cover.png",
+    "blake3": "1111111111111111111111111111111111111111111111111111111111111111",
+    "width": 1600,
+    "height": 900
+  },
+  "requirements": {
+    "os": "Windows 10 64-bit",
+    "cpu": "4 cores",
+    "ram": "8 GB",
+    "gpu": "DX12"
+  },
+  "paid": false,
+  "price_display": "Free",
+  "developer": "Example Studio",
+  "homepage": "https://example.com/example-game",
+  "platforms": [
+    "windows-x64"
+  ],
+  "default_language": "en",
+  "release": {
+    "status": "early-access",
+    "date": "2026-11-18"
+  },
+  "updated": "2026-11-18",
+  "features": [
+    "single-player",
+    "online-co-op",
+    "controller"
+  ],
+  "max_players": 4,
+  "languages": {
+    "en": {
+      "interface": true,
+      "audio": true,
+      "subtitles": true
+    },
+    "ja": {
+      "interface": true,
+      "subtitles": true
+    }
+  },
+  "system_requirements": {
+    "windows-x64": {
+      "minimum": {
+        "os": "Windows 10 64-bit",
+        "cpu": "4 cores",
+        "memory": "8 GB",
+        "gpu": "DirectX 11",
+        "storage": "2 GB"
+      },
+      "recommended": {
+        "memory": "16 GB"
+      }
+    },
+    "web-wasm32": {
+      "minimum": {
+        "notes": "WebGL 2"
+      }
+    }
+  },
+  "capsule": {
+    "url": "https://example.com/example-game/capsule.png",
+    "blake3": "3333333333333333333333333333333333333333333333333333333333333333",
+    "width": 600,
+    "height": 900
+  },
+  "logo": {
+    "url": "https://example.com/example-game/logo.png",
+    "blake3": "4444444444444444444444444444444444444444444444444444444444444444",
+    "width": 800,
+    "height": 300
+  },
+  "background": {
+    "url": "https://example.com/example-game/background.jpg",
+    "blake3": "5555555555555555555555555555555555555555555555555555555555555555",
+    "width": 1920,
+    "height": 1080
+  },
+  "trailers": [
+    {
+      "kind": "youtube",
+      "id": "dQw4w9WgXcQ",
+      "title": {
+        "en": "Launch trailer"
+      }
+    },
+    {
+      "kind": "video",
+      "url": "https://example.com/example-game/gameplay.webm",
+      "poster": {
+        "url": "https://example.com/example-game/poster.png",
+        "blake3": "2222222222222222222222222222222222222222222222222222222222222222",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "links": {
+    "discord": "https://discord.gg/example",
+    "steam": "https://store.steampowered.com/app/1",
+    "press-kit": "https://example.com/press"
+  },
+  "publishers": [
+    "Example Publishing"
+  ],
+  "content_descriptors": [
+    "violence"
+  ],
+  "accessibility": [
+    "subtitles",
+    "remappable-controls"
+  ]
+}

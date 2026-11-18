@@ -9,12 +9,12 @@ for (const role of ["snapshot", "timestamp"]) {
   });
 }
 
-test("allows only the three developer-authorized files in one application", () => {
-  const files = ["store.json", "description.md", "targets.json"];
+test("allows only developer-signed files in one application", () => {
+  const files = ["store.json", "description.md", "targets.json", "changelog.md", "description.ja.md", "changelog.zh-Hans.md"];
   assert.equal(checkPrFiles(files.map(name => ({ filename: `apps/game/${name}` }))).allowed, true);
 });
 
-for (const name of ["apps/game/snapshot.json", "apps/game/timestamp.json", "apps/other/store.json", "routes.json", ".github/workflows/x.yml", "scripts/x.mjs", "schemas/store.schema.json", "root.json", "apps/game/other.json", "apps/game/storeXjson", "apps/../store.json"]) {
+for (const name of ["apps/game/snapshot.json", "apps/game/timestamp.json", "apps/other/store.json", "routes.json", ".github/workflows/x.yml", "scripts/x.mjs", "schemas/store.schema.json", "root.json", "apps/game/other.json", "apps/game/storeXjson", "apps/../store.json", "apps/game/readme.md", "apps/game/description.md.bak", "apps/game/sub/changelog.md"]) {
   test(`rejects full PR diff containing ${name}`, () => {
     const result = checkPrFiles([{ filename: name }, { filename: "apps/game/store.json" }]);
     assert.equal(result.allowed, false);
