@@ -1,32 +1,467 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vesper.example/schemas/store.schema.json",
+  "description": "A game's store listing. The checks in scripts/store-rules.mjs and crates/vesper-meta/src/store.rs are authoritative; this schema documents them.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["title", "summary", "tags", "screenshots", "cover", "requirements", "paid", "price_display", "developer", "homepage", "platforms"],
+  "required": [
+    "title",
+    "summary",
+    "tags",
+    "screenshots",
+    "cover",
+    "requirements",
+    "paid",
+    "price_display",
+    "developer",
+    "homepage",
+    "platforms"
+  ],
   "properties": {
-    "title": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
-    "summary": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
-    "tags": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"}},
-    "screenshots": {"type": "array", "items": {"$ref": "#/$defs/media"}},
-    "cover": {"$ref": "#/$defs/media"},
-    "requirements": {"type": "object", "additionalProperties": {"type": "string"}},
-    "paid": {"type": "boolean"},
-    "price_display": {"type": "string"},
-    "developer": {"type": "string", "minLength": 1},
-    "homepage": {"type": "string", "format": "uri", "pattern": "^https://"},
-    "platforms": {"type": "array", "minItems": 1, "items": {"enum": ["windows-x64", "linux-x64", "macos-arm64", "macos-x64", "web-wasm32"]}}
+    "title": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/language"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 300
+      }
+    },
+    "summary": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/language"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 300
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "$ref": "#/$defs/media"
+      }
+    },
+    "cover": {
+      "$ref": "#/$defs/media"
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "maxLength": 300
+      }
+    },
+    "paid": {
+      "type": "boolean"
+    },
+    "price_display": {
+      "type": "string"
+    },
+    "developer": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "homepage": {
+      "type": "string",
+      "pattern": "^https://\\S+$",
+      "maxLength": 2048
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "windows-x64",
+          "linux-x64",
+          "macos-arm64",
+          "macos-x64",
+          "web-wasm32"
+        ]
+      }
+    },
+    "default_language": {
+      "$ref": "#/$defs/language"
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "coming-soon",
+            "early-access",
+            "released"
+          ]
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        }
+      }
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "features": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "single-player",
+          "online-co-op",
+          "local-co-op",
+          "online-pvp",
+          "local-pvp",
+          "controller",
+          "keyboard-mouse",
+          "touch",
+          "cloud-saves",
+          "achievements",
+          "mod-support",
+          "level-editor"
+        ]
+      }
+    },
+    "max_players": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "languages": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "propertyNames": {
+        "$ref": "#/$defs/language"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": false,
+        "properties": {
+          "interface": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "subtitles": {
+            "type": "boolean"
+          }
+        },
+        "description": "At least one value must be true."
+      }
+    },
+    "system_requirements": {
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "windows-x64",
+          "linux-x64",
+          "macos-arm64",
+          "macos-x64",
+          "web-wasm32"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": false,
+        "properties": {
+          "minimum": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": false,
+            "properties": {
+              "os": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "cpu": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "gpu": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "memory": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "storage": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "network": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          },
+          "recommended": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": false,
+            "properties": {
+              "os": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "cpu": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "gpu": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "memory": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "storage": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "network": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          }
+        }
+      }
+    },
+    "capsule": {
+      "$ref": "#/$defs/media"
+    },
+    "logo": {
+      "$ref": "#/$defs/media"
+    },
+    "background": {
+      "$ref": "#/$defs/media"
+    },
+    "trailers": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "id"
+            ],
+            "properties": {
+              "kind": {
+                "const": "youtube"
+              },
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]{11}$"
+              },
+              "title": {
+                "type": "object",
+                "minProperties": 1,
+                "propertyNames": {
+                  "$ref": "#/$defs/language"
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "url",
+              "poster"
+            ],
+            "properties": {
+              "kind": {
+                "const": "video"
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https://[^?#\\s]+\\.(mp4|webm)([?#]\\S*)?$"
+              },
+              "poster": {
+                "$ref": "#/$defs/media"
+              },
+              "title": {
+                "type": "object",
+                "minProperties": 1,
+                "propertyNames": {
+                  "$ref": "#/$defs/language"
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "links": {
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "discord",
+          "x",
+          "bluesky",
+          "youtube",
+          "twitch",
+          "reddit",
+          "steam",
+          "itch",
+          "github",
+          "wiki",
+          "press-kit",
+          "support"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^https://\\S+$",
+        "maxLength": 2048
+      }
+    },
+    "publishers": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      }
+    },
+    "content_descriptors": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "violence",
+          "blood",
+          "gore",
+          "strong-language",
+          "sexual-content",
+          "nudity",
+          "drugs",
+          "alcohol",
+          "gambling",
+          "horror"
+        ]
+      }
+    },
+    "accessibility": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "subtitles",
+          "colorblind-modes",
+          "remappable-controls",
+          "adjustable-text-size",
+          "screen-reader",
+          "one-handed",
+          "difficulty-options",
+          "reduced-motion",
+          "no-flashing-lights"
+        ]
+      }
+    }
   },
   "$defs": {
+    "language": {
+      "type": "string",
+      "maxLength": 35,
+      "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{1,8})*$"
+    },
     "media": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["url", "blake3", "width", "height"],
+      "required": [
+        "url",
+        "blake3",
+        "width",
+        "height"
+      ],
       "properties": {
-        "url": {"type": "string", "pattern": "^https://"},
-        "blake3": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
-        "width": {"type": "integer", "minimum": 1},
-        "height": {"type": "integer", "minimum": 1}
+        "url": {
+          "type": "string",
+          "pattern": "^https://\\S+$",
+          "maxLength": 2048
+        },
+        "blake3": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        }
       }
     }
   }

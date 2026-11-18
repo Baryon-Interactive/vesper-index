@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import { isStoreFileName } from "./store-rules.mjs";
 
 const args = process.argv.slice(2);
 const at = (name, fallback) => {
@@ -59,15 +60,13 @@ for (const app of apps) {
     if (!tags.has(tag)) tags.set(tag, []);
     tags.get(tag).push(app);
   }
-  for (const name of [
-    "store.json",
-    "description.md",
-    "targets.json",
-    "snapshot.json",
-    "timestamp.json",
-  ])
-    if (fs.existsSync(path.join(dir, name)))
-      copy(path.join(dir, name), path.join(out, "apps", app, name));
+  // Every signed store file (store.json, description.md, changelog.md and their
+  // per-language variants) is served next to the signed metadata that binds it.
+  const files = fs
+    .readdirSync(dir)
+    .filter((name) => isStoreFileName(name) || ["targets.json", "snapshot.json", "timestamp.json"].includes(name))
+    .sort();
+  for (const name of files) copy(path.join(dir, name), path.join(out, "apps", app, name));
 }
 const pages = Math.max(1, Math.ceil(records.length / 50));
 for (let n = 0; n < pages; n++)

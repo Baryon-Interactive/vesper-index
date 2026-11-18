@@ -1,28 +1,88 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Application directory file layout",
-  "description": "Logical mapping of filenames to decoded contents. Developer hosting serves the three developer files at the route metadata_url. Aggregation copies their exact raw bytes to apps/<id>/; central online signing supplies snapshot and timestamp.",
+  "description": "Logical mapping of filenames to decoded contents. Developer hosting serves targets.json and every store file it signs at the route metadata_url: store.json, description.md and optionally changelog.md plus per-language description.<lang>.md and changelog.<lang>.md (at most 32 store files, 64 KiB per document). Aggregation copies their exact raw bytes to apps/<id>/; central online signing supplies snapshot and timestamp.",
   "$ref": "#/$defs/developer",
   "$defs": {
     "files": {
       "type": "object",
       "properties": {
-        "targets.json": {"$ref": "app-targets.schema.json"},
-        "store.json": {"$ref": "store.schema.json"},
-        "description.md": {"type": "string"},
-        "snapshot.json": {"type": "object", "required": ["signed", "signatures"]},
-        "timestamp.json": {"type": "object", "required": ["signed", "signatures"]}
+        "targets.json": {
+          "$ref": "app-targets.schema.json"
+        },
+        "store.json": {
+          "$ref": "store.schema.json"
+        },
+        "description.md": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "snapshot.json": {
+          "type": "object",
+          "required": [
+            "signed",
+            "signatures"
+          ]
+        },
+        "timestamp.json": {
+          "type": "object",
+          "required": [
+            "signed",
+            "signatures"
+          ]
+        },
+        "changelog.md": {
+          "type": "string",
+          "maxLength": 65536
+        }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(description|changelog)\\.[A-Za-z]{2,3}(-[A-Za-z0-9]{1,8})*\\.md$": {
+          "type": "string",
+          "maxLength": 65536
+        }
+      }
     },
     "developer": {
-      "allOf": [{"$ref": "#/$defs/files"}],
-      "required": ["targets.json", "store.json", "description.md"],
-      "not": {"anyOf": [{"required": ["snapshot.json"]}, {"required": ["timestamp.json"]}]}
+      "allOf": [
+        {
+          "$ref": "#/$defs/files"
+        }
+      ],
+      "required": [
+        "targets.json",
+        "store.json",
+        "description.md"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "snapshot.json"
+            ]
+          },
+          {
+            "required": [
+              "timestamp.json"
+            ]
+          }
+        ]
+      }
     },
     "central": {
-      "allOf": [{"$ref": "#/$defs/files"}],
-      "required": ["targets.json", "store.json", "description.md", "snapshot.json", "timestamp.json"]
+      "allOf": [
+        {
+          "$ref": "#/$defs/files"
+        }
+      ],
+      "required": [
+        "targets.json",
+        "store.json",
+        "description.md",
+        "snapshot.json",
+        "timestamp.json"
+      ]
     }
   }
 }
