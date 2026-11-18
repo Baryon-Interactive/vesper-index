@@ -9,11 +9,11 @@ No Doors Allowed is a heist game built from small voxels. Walls, floors and ceil
 - **Mind the structure.** Buildings carry their own weight. Take out the wrong wall and the floor above comes down, on the loot or on you. Brace it with steel struts when you need to.
 - **Loot has weight.** Jewellery trays, watches, paintings, safes and heavy cargo all take up space and have to be carried out by hand. Fragile pieces lose value when they are dropped or caught in a blast.
 - **The alarm always goes off.** The quiet phase is for setting up. When the alarm sounds, steel shutters drop, police arrive in waves and breachers blow their own holes in the walls.
-- **Lose them in the van.** Drive through a generated city and reach a garage without being seen. Crash too hard and the cargo falls out the back.
+- **Lose them in the van.** Drive through a generated city and reach a garage without being seen. The van has real weight: it leans into corners, scrapes along walls and drops cargo out the back if you crash too hard.
 
 ## Run a crew
 
-Between jobs you pay back the fixer, choose who to sell to, buy gear and struts, and repaint the van. A daily building gives everyone the same job each day, and the weekly 3-job strings three buildings together with no restock in between.
+Between jobs you pay back the fixer, choose who to sell to, buy gear and struts, and build up the van in the garage: wheels, neon, roof parts and liveries, plus engine, tyres, armour, bumper and nitro. A daily building gives everyone the same job each day, and the weekly 3-job strings three buildings together with no restock in between.
 
 ## Early build
 
