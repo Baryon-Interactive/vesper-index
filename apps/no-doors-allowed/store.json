@@ -56,12 +56,7 @@
     "width": 1600,
     "height": 900
   },
-  "requirements": {
-    "Browser": "Desktop Chrome, Edge or Firefox with WebGL 2",
-    "Windows": "Windows 10 or 11, 64-bit, DirectX 11 graphics",
-    "Memory": "8 GB RAM",
-    "Input": "Keyboard and mouse"
-  },
+  "requirements": {},
   "paid": false,
   "price_display": "Free",
   "developer": "Baryon Interactive",
@@ -69,5 +64,41 @@
   "platforms": [
     "windows-x64",
     "web-wasm32"
+  ],
+  "default_language": "en",
+  "release": {
+    "status": "early-access",
+    "date": "2026-11-18"
+  },
+  "updated": "2026-11-18",
+  "features": [
+    "single-player",
+    "keyboard-mouse"
+  ],
+  "languages": {
+    "en": {
+      "interface": true,
+      "audio": false,
+      "subtitles": false
+    }
+  },
+  "system_requirements": {
+    "windows-x64": {
+      "minimum": {
+        "os": "Windows 10 or 11, 64-bit",
+        "gpu": "DirectX 11 graphics",
+        "memory": "8 GB RAM"
+      }
+    },
+    "web-wasm32": {
+      "minimum": {
+        "os": "Windows, macOS or Linux desktop",
+        "memory": "8 GB RAM",
+        "notes": "Desktop Chrome, Edge or Firefox with WebGL 2"
+      }
+    }
+  },
+  "content_descriptors": [
+    "violence"
   ]
 }
