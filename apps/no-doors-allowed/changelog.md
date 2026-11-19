@@ -1,3 +1,11 @@
+## 0.3.4 (2026-11-19)
+
+- The first job now ends with a real drive: after loading the painting, the crew gets in the van and drives to the training garage. There are no police on the way, and R puts the van back on the road if you get stuck.
+- The first job shows the key to press at every step, including getting in and out of the van.
+- Voice chat no longer starts with your microphone open. Hold Caps Lock to talk, or pick Toggle or Always on in the settings. The browser only asks for microphone access the first time you press the key, and the crew panel shows who is speaking.
+- Rain is quieter by default and has its own volume slider in the settings.
+- Everyone in an online crew needs 0.3.4.
+
 ## 0.3.3 (2026-11-19)
 
 - You can now see what your crewmates are holding and doing: tools, guns, throws and carried loot show in their hands, and two players lifting a safe each hold one side.

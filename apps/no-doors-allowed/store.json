@@ -71,6 +71,7 @@
     "date": "2026-11-18"
   },
   "updated": "2026-11-19",
+  "play_params": ["code"],
   "features": [
     "single-player",
     "online-co-op",
