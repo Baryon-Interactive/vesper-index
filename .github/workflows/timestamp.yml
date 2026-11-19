@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 permissions: {actions: write, contents: write, pages: write, id-token: write}
 env:
-  VESPER_VERSION: '0.8.0'
-  VESPER_SHA256: 'fa08f252361d001a56b73e1233cc022cdb2a128ee7cf0b9f6a2214d76307be8f'
+  VESPER_VERSION: '0.9.0'
+  VESPER_SHA256: '4da219eb2e6f5164cababa5cf723aaa087bfc9d3a508688e1a9dc690c6cc5b4e'
   VESPER_RELEASES_REPO: Baryon-Interactive/vesper
 jobs:
   timestamp:
