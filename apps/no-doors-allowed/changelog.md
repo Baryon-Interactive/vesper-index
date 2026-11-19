@@ -1,3 +1,9 @@
+## 0.3.5 (2026-11-19)
+
+- Loot now counts as loaded when you set it down or throw it inside the van's cargo bay, not only just behind the rear doors. In the first job this means you can load the painting from inside the van and go on to drive to the garage.
+- Fixed online voice chat in the browser: players who joined a room can be heard again, not only the host.
+- Everyone in an online crew needs 0.3.5.
+
 ## 0.3.4 (2026-11-19)
 
 - The first job now ends with a real drive: after loading the painting, the crew gets in the van and drives to the training garage. There are no police on the way, and R puts the van back on the road if you get stuck.
