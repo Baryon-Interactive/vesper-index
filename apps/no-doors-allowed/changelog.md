@@ -1,3 +1,7 @@
+## 0.3.1 (2026-11-19)
+
+- Online co-op now works in the browser version: Play online connects to the public lobby, where you can open a room, browse open rooms or join by room code.
+
 ## 0.3.0 (2026-11-19)
 
 - A guided first job walks new crews through the basics, and the van's tabs open up over the first four jobs.
