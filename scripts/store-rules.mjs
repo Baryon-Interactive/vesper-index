@@ -26,8 +26,14 @@ const REQUIRED = [
 ];
 const OPTIONAL = [
   "default_language", "release", "features", "max_players", "languages", "system_requirements", "capsule", "logo",
-  "background", "trailers", "links", "publishers", "content_descriptors", "accessibility", "updated",
+  "background", "trailers", "links", "publishers", "content_descriptors", "accessibility", "updated", "play_params",
 ];
+export const MAX_PLAY_PARAMS = 16;
+export const RESERVED_PLAY_PARAMS = ["app", "channel"];
+
+/** A query key a web game may accept from a play link (play_params). */
+export const isPlayParam = (key) =>
+  typeof key === "string" && /^[A-Za-z0-9_-]{1,32}$/.test(key) && !RESERVED_PLAY_PARAMS.includes(key);
 const MEDIA_RULE = "must have an https url, a 64-character blake3 and width/height from 1 to 16384";
 
 const isObject = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
@@ -163,6 +169,11 @@ export function validateStore(store) {
   }
   if ("links" in store && !(isObject(store.links) && Object.entries(store.links).every(([k, v]) => LINKS.includes(k) && https(v))))
     fail(`links must map ${LINKS.join(", ")} to https:// URLs`);
+  if ("play_params" in store) {
+    const p = store.play_params;
+    if (!(Array.isArray(p) && p.length >= 1 && p.length <= MAX_PLAY_PARAMS && p.every((k, i) => isPlayParam(k) && p.indexOf(k) === i)))
+      fail(`play_params must list 1 to ${MAX_PLAY_PARAMS} unique query keys (A-Z, a-z, 0-9, _, -; at most 32 characters; not app or channel)`);
+  }
   if ("publishers" in store && !(Array.isArray(store.publishers) && store.publishers.length >= 1 && store.publishers.length <= 10 && store.publishers.every((v) => text(v, 100))))
     fail("publishers must list 1 to 10 names");
   return errors;

@@ -125,6 +125,18 @@
       "type": "string",
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
     },
+    "play_params": {
+      "description": "Query keys a web build accepts from play links; the play site forwards only these to the game.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,32}$",
+        "not": { "enum": ["app", "channel"] }
+      }
+    },
     "features": {
       "type": "array",
       "uniqueItems": true,

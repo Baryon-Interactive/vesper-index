@@ -130,5 +130,9 @@
   "accessibility": [
     "subtitles",
     "remappable-controls"
+  ],
+  "play_params": [
+    "code",
+    "room_id-2"
   ]
 }
