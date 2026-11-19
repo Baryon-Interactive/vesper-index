@@ -1,3 +1,14 @@
+## 0.3.3 (2026-11-19)
+
+- You can now see what your crewmates are holding and doing: tools, guns, throws and carried loot show in their hands, and two players lifting a safe each hold one side.
+- Rain sounds steady instead of cutting out every few seconds. Heavy and light rain look different, wind slants it, roofs and vans keep it off, and puddles ripple and splash.
+- Walls and floors no longer shimmer with wavy patterns at a distance or under neon light.
+- In the first job, hammering the boards breaks them off row by row, and everyone in the crew sees the hole. Tools now tell you when a material is too hard for them.
+- Parked crew vans take a beating before they break: a hammer dents them first and tears the panel after about a dozen hits.
+- Fixed the van starting stuck against a wall in the warehouse back alley.
+- The Windows build also gets the fixes from 0.3.1 and 0.3.2.
+- Everyone in an online crew needs 0.3.3; older versions no longer join the same rooms.
+
 ## 0.3.2 (2026-11-19)
 
 - Online co-op in the browser now falls back to a relay server when two players cannot connect directly, so crews behind strict home or office networks can still play together.
