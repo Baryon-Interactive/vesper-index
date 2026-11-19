@@ -1,3 +1,8 @@
+## 0.3.2 (2026-11-19)
+
+- Online co-op in the browser now falls back to a relay server when two players cannot connect directly, so crews behind strict home or office networks can still play together.
+- Fixed errors while joining a crew before the first job loads, and a glitch in the studio intro.
+
 ## 0.3.1 (2026-11-19)
 
 - Online co-op now works in the browser version: Play online connects to the public lobby, where you can open a room, browse open rooms or join by room code.
