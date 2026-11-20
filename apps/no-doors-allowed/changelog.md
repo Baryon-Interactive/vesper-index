@@ -1,3 +1,18 @@
+## 0.3.6 (2026-11-20)
+
+- Private cash: every job you escape from pays each player 5% of what the crew carried out. It is yours to keep, even if the run goes bankrupt.
+- The WARDROBE: spend private cash on 26 new looks (masks, full outfits, jacket patterns, bags and gloves, tool skins) and 10 emotes. Four items are on sale each week. Hold G for the emote wheel; explosives now go off with J.
+- The safehouse: between jobs the crew hangs out in a garage you can walk around. Use the mirror for the wardrobe, the workbench for gear, the whiteboard for contracts, and smash the practice wall as much as you like.
+- Crew crest: draw a 16x16 pixel crest and give your crew a name. It goes on the van and on everyone's jacket.
+- Weekly challenges: five new challenges every Monday, paid in private cash, with a limited look for finishing all five.
+- 30 achievements, stored on your profile.
+- Safes can now be taken quietly: cut the power, jam the vault alarm or remove it (hold H), or open the safe in place and take only the gold and cash.
+- Eight new things to steal, among them a grand piano, a parrot that gives you away unless you cover its cage, and gold hidden inside a load-bearing column.
+- Export a 12-second highlight clip from the results screen.
+- Fixes: the rented basement's stairs can be climbed, dug tunnels can be walked into, and Tab underground also shows the floor above. Mic voice no longer alerts guards. You can get out of the van whenever it is stopped. Driving looks smoother online, footsteps are cleaner, and the camera no longer jumps when playing solo.
+- The van now knocks pedestrians over, and gunshots, shotguns most of all, knock people back.
+- Everyone in an online crew needs 0.3.6.
+
 ## 0.3.5 (2026-11-19)
 
 - Loot now counts as loaded when you set it down or throw it inside the van's cargo bay, not only just behind the rear doors. In the first job this means you can load the painting from inside the van and go on to drive to the garage.
