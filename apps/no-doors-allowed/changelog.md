@@ -1,3 +1,8 @@
+## 0.3.8 (2026-11-21)
+
+- Feedback, crash reports and anonymous stats now carry the real game version, so we can tell which release a problem comes from. Earlier builds all reported themselves as 0.1.0.
+- Everyone in an online crew needs 0.3.8.
+
 ## 0.3.7 (2026-11-21)
 
 - The game is now available in Simplified Chinese and Japanese. It follows your system or browser language the first time you start it, and you can switch at any time under Settings → Language without restarting. The Japanese text has not been reviewed by a native speaker yet.
