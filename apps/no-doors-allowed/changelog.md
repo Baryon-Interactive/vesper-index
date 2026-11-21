@@ -1,3 +1,20 @@
+## 0.3.7 (2026-11-21)
+
+- The game is now available in Simplified Chinese and Japanese. It follows your system or browser language the first time you start it, and you can switch at any time under Settings → Language without restarting. The Japanese text has not been reviewed by a native speaker yet.
+- Six new things to steal: an ATM with a dye pack, pneumatic tube cash canisters, a koi, a motorbike you can push or start (K), a meteorite and a dinosaur skull.
+- Shooting a placed charge sets it off on the spot.
+- Braking builds up gradually and the van only reverses after it has fully stopped, with new tyre and brake sounds.
+- Police and SWAT hold their guns and shields properly.
+- Exported clips now look like the game: up to 1080p, with the same lighting and effects.
+- In the safehouse the whiteboard shows the building you are picking, and you can turn it around. The safehouse has a tool bar, the practice wall takes every tool, and H shows the controls.
+- Expanding foam no longer holds up floors, and foam you spray melts away after 40 seconds.
+- Every gunshot pushes people back a little, not only the ones that knock them down.
+- Fixed more camera jumps when playing solo.
+- Saves are backed up automatically; if a save is damaged the game goes back to the last good copy. On Windows, saves now live in files instead of the registry and are moved over the first time you start 0.3.7.
+- Send feedback from the pause menu or the results screen, with an optional screenshot and replay of the job. You see everything that will be sent before it goes. On Windows, after a crash the game asks the next time it starts whether to send the crash report.
+- Anonymous gameplay and performance stats help us find bugs and balance jobs. They never include your IP address, name, crew name or room code. Players in the EU and UK are asked first; everyone else can turn them off in Settings. The privacy notice is in the settings, and you can reach us at privacy@vesperplay.xyz.
+- Everyone in an online crew needs 0.3.7.
+
 ## 0.3.6 (2026-11-20)
 
 - Private cash: every job you escape from pays each player 5% of what the crew carried out. It is yours to keep, even if the run goes bankrupt.

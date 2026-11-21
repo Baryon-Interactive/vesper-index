@@ -17,4 +17,4 @@ Between jobs you pay back the fixer, choose who to sell to, buy gear and struts,
 
 ## Early build
 
-This is an in-development build, playable solo in your browser or on Windows. In the browser, up to four players can team up online: choose Play online to browse open rooms or join a friend by room code. The Windows build plays solo for now; its online lobby will come later. Saves stay in your browser or on your PC.
+This is an in-development build, playable solo in your browser or on Windows. In the browser, up to four players can team up online: choose Play online to browse open rooms or join a friend by room code. The Windows build plays solo for now; its online lobby will come later. Saves stay in your browser or on your PC. The game is in English, Simplified Chinese and Japanese.
