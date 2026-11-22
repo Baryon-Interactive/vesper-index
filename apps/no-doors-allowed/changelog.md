@@ -1,3 +1,14 @@
+## 0.3.9 (2026-11-22)
+
+- New field handbook: open it from the start screen, the pause menu, the book in the safehouse, or with F1. It covers controls, how guards and police see and hear you, everything that sets off the alarm and how to avoid it, police waves, what counts as being caught in the getaway and how to escape, gear, loot, money and the safehouse. All distances, timers, health and prices come straight from the game rules.
+- The alarm banner now says exactly what set it off (which wall sensor, what a guard saw, which gun, the helicopter and so on). The spot is marked in the world and on the Tab plan for a few seconds, and the results screen shows when and why the alarm went off. Press F1 to jump to the matching handbook page.
+- Fixed banks with an ATM setting off the alarm the moment the job started.
+- Fixed the bought pre-cut seam sitting right next to a wall sensor, so kicking it out no longer trips the alarm.
+- Calling the penthouse helicopter now takes holding E for 1.5 seconds. Before the alarm, everyone still standing must be within 6 m of the pad. The crew now starts further from the pad.
+- Safehouse: the van panel opens on GEAR and sells every tool and gadget; the whiteboard is only for contracts, approach and departure. E opens and closes every station, Esc closes, and Tab no longer opens the van.
+- Safehouse: the tool bar shows the gear you actually bought, and changes as soon as you buy or sell. Tools that can't be used on the practice wall are greyed out; struts now work there.
+- Everyone in an online crew needs 0.3.9.
+
 ## 0.3.8 (2026-11-21)
 
 - Feedback, crash reports and anonymous stats now carry the real game version, so we can tell which release a problem comes from. Earlier builds all reported themselves as 0.1.0.
