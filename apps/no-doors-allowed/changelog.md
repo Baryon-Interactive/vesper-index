@@ -1,3 +1,12 @@
+## 0.3.10 (2026-11-22)
+
+- Insider favours and timed intel moved to the contracts whiteboard: it now has JOB, PREP, CLIENTS and WEEKLY, so you pick the job and book its favours in one place. The van and the workbench only handle the garage, looks and gear.
+- Fixed the solo camera jumping: turning on the spot, walking and running no longer snap the view or lurch after a slow frame, and the browser's occasional pointer-lock jumps are filtered out.
+- Before the alarm, guards and police dogs no longer follow footsteps from crew who are outside the building and not carrying loot. Tools, guns, shouts and footsteps inside still draw them in.
+- Guards and police are harder to hit you with on the move: sprinting across their line of fire spreads their shots a lot, they get less accurate at range, and it takes them about 6 seconds of steady sight to settle their aim. Damage per bullet is unchanged.
+- Browser: errors from extensions such as wallet add-ons no longer bring up the error report prompt, and a Chrome-only error on some key presses is fixed.
+- Everyone in an online crew needs 0.3.10.
+
 ## 0.3.9 (2026-11-22)
 
 - New field handbook: open it from the start screen, the pause menu, the book in the safehouse, or with F1. It covers controls, how guards and police see and hear you, everything that sets off the alarm and how to avoid it, police waves, what counts as being caught in the getaway and how to escape, gear, loot, money and the safehouse. All distances, timers, health and prices come straight from the game rules.
