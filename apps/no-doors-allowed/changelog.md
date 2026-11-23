@@ -1,3 +1,13 @@
+## 0.3.11 (2026-11-23)
+
+- Melee weapons: four new weapons to buy on the GEAR page, carried on the M key. The telescopic baton is fast and almost silent. The shock baton stuns people and dogs for 2 seconds and recharges at the van. The fire axe hits hard and chops wide holes through wood, doors and glass, but it is loud. The hydraulic prybar quietly pries open glass, wood and thin steel doors, and makes vault and safe work twice as fast. The shock baton and the prybar unlock with street reputation.
+- Basic tools now hit people: the hammer, the saw and the kick work on guards, police and dogs. Hitting an unaware guard from behind knocks them out in one blow without a sound. Riot shields block melee from the front.
+- Guards and police aim faster: their first shot is closer, they settle in about 2.5 seconds, and losing sight of you for a moment no longer resets their aim. Sprinting across their line of fire is still the best way to avoid being hit.
+- Police dogs now latch on for about 2 seconds and do 35 damage instead of downing you outright. Hitting the dog makes it let go.
+- Better hit feedback: bigger hit markers with sounds, separate markers for headshots and takedowns, enemies flinch when hit, and a red indicator shows which direction you were hit from. Hit markers can be turned off in Settings.
+- Replays now pick moments with your crew in them, such as firefights, takedowns, breaking in and loading loot, and the camera keeps a crew member in view.
+- Everyone in an online crew needs 0.3.11.
+
 ## 0.3.10 (2026-11-22)
 
 - Insider favours and timed intel moved to the contracts whiteboard: it now has JOB, PREP, CLIENTS and WEEKLY, so you pick the job and book its favours in one place. The van and the workbench only handle the garage, looks and gear.
