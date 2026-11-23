@@ -1,3 +1,20 @@
+## 0.3.12 (2026-11-24)
+
+- Career, daily and weekly runs are now saved separately. Switching to DAILY or WEEKLY and back no longer starts a new career from the first job; your job number, cash, garage and gear are kept.
+- After a job, the big button on the results screen takes you back to the safehouse for the next job. Replay, full replay and feedback sit underneath.
+- Confirm & Start on the whiteboard launches the job straight away; walking to the van still works. Online, only the host picks the contract and locks it. Everyone else then buys gear and presses Ready, and the host can start once the whole crew is ready.
+- Longer replays: up to four highlights of about 8 seconds each. A new full replay plays the whole job at 4x with a progress bar you can drag, pause, 1x to 8x speed, switch crew member and top-down view.
+- Getaway: garages turn red while the police can still see you and green once you've lost them, with a countdown. Police cars no longer follow you inside; they block the entrance instead.
+- The starter van is quicker (0-50 km/h in about 2.4 s, top speed about 101 km/h) and drifts properly with the handbrake. The back doors warn you before they burst open, and you're told which item fell out and what it was worth.
+- New brake sound and five new hit sounds. Hits are punchier: the crosshair kicks, takedowns get a short pause, and enemies show sparks and debris. Settings has a camera shake slider.
+- Walls you can't smash now tell you why: aiming a hammer, saw, kick or melee weapon at concrete or steel shows which tools will work, and hitting it gives a clang and sparks. Holding X highlights the walls a hammer can break.
+- Fixed building textures shimmering and flickering in the distance and while driving.
+- Fixed the driving camera wobbling with the mouse still, and pedestrians getting stuck on the street.
+- Single player now pauses while the Esc menu is open.
+- First job: on-screen arrows point to the wall, the painting, the van and the garage when they're off screen; the hammer and saw only remove the marked boards. The first job sells only to the fixer; more buyers open from job 2.
+- Small windows no longer overlap the health bar, prompts and banners. Fixed an error prompt when the browser refuses mouse lock.
+- Everyone in an online crew needs 0.3.12.
+
 ## 0.3.11 (2026-11-23)
 
 - Melee weapons: four new weapons to buy on the GEAR page, carried on the M key. The telescopic baton is fast and almost silent. The shock baton stuns people and dogs for 2 seconds and recharges at the van. The fire axe hits hard and chops wide holes through wood, doors and glass, but it is loud. The hydraulic prybar quietly pries open glass, wood and thin steel doors, and makes vault and safe work twice as fast. The shock baton and the prybar unlock with street reputation.
