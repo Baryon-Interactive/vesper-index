@@ -1,3 +1,8 @@
+## 0.3.13 (2026-11-24)
+
+- Fixed an error report prompt that could pop up when the game was opened in a background browser tab. Nothing else changes.
+- Everyone in an online crew needs 0.3.13.
+
 ## 0.3.12 (2026-11-24)
 
 - Career, daily and weekly runs are now saved separately. Switching to DAILY or WEEKLY and back no longer starts a new career from the first job; your job number, cash, garage and gear are kept.
