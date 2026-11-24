@@ -1,3 +1,8 @@
+## 0.3.14 (2026-11-24)
+
+- Fixed the cause of the background-tab render errors: street reflections no longer try to render when the game window is squeezed to almost nothing, so the browser console stays clean too. Nothing else changes.
+- Everyone in an online crew needs 0.3.14.
+
 ## 0.3.13 (2026-11-24)
 
 - Fixed an error report prompt that could pop up when the game was opened in a background browser tab. Nothing else changes.
