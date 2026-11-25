@@ -1,3 +1,12 @@
+## 0.3.15 (2026-11-25)
+
+- Van cosmetics now use your private cash and are yours for good: paint, lettering, add-ons, wheels, wear and neon stay owned through bankruptcy and new careers. Anything you already owned is kept. Buying a van and performance upgrades still use crew cash. Online, the van shows the host's look, and anyone can buy cosmetics for their own profile.
+- New weapon models: the pistol, shotgun, SMG, baton, fire axe, shock baton and hydraulic prybar are rebuilt in fine detail, in your hands, your crew's hands and the wardrobe preview. Muzzle flashes come from the new barrels, and the SMG can now wear tool skins.
+- Replays no longer get stuck behind walls, cars or buildings: the camera keeps the crew member in view, and the top-down view cuts away roofs in every building.
+- Fixed an error after a job when you went straight back to the safehouse after bumping a parked car in the getaway. Fewer lights are active at once, which also removes a burst of graphics warnings.
+- Error reports now say what the game was doing at the time, so problems are easier to fix.
+- Everyone in an online crew needs 0.3.15.
+
 ## 0.3.14 (2026-11-24)
 
 - Fixed the cause of the background-tab render errors: street reflections no longer try to render when the game window is squeezed to almost nothing, so the browser console stays clean too. Nothing else changes.
